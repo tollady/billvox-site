@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="corporate">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Billvox — Quotes & invoices sent straight from the job</title>
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+
+<!-- Nav -->
+<nav class="nav">
+  <span class="nav-logo">Billvox</span>
+  <a href="#waitlist" class="nav-cta">Join waitlist</a>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-badge">🚧 Coming soon · Melbourne, AU</div>
+  <h1>Quotes &amp; invoices sent<br><span>straight from the job.</span></h1>
+  <p class="hero-sub">Text us what you've done. We send the invoice. No app, no admin when you get home.</p>
+
+  <div class="waitlist-wrap" id="waitlist">
+    <div id="hero-form">
+      <input id="h-name" class="form-input" type="text" placeholder="Your name">
+      <input id="h-email" class="form-input" type="email" placeholder="Email address">
+      <input id="h-phone" class="form-input" type="tel" placeholder="Mobile number (optional)">
+      <button class="btn-primary" onclick="submitHero()">Register interest →</button>
+    </div>
+    <div id="hero-success" class="form-success">✓ You're on the list. We'll be in touch!</div>
+    <p class="form-note">No spam. Early access only.</p>
+  </div>
+
+  <div class="avatar-row">
+    <div class="avatar-stack">
+      <div class="avatar avatar-1">BM</div>
+      <div class="avatar avatar-2">SL</div>
+      <div class="avatar avatar-3">TK</div>
+      <div class="avatar avatar-4">JP</div>
+    </div>
+    <span class="avatar-label">Join <strong>47 tradies</strong> already on the list</span>
+  </div>
+</section>
+
+<!-- SMS Demo -->
+<section class="section-demo">
+  <div class="inner-560">
+    <p class="section-label">See it in action</p>
+    <div class="chat-window">
+      <p class="chat-header">WhatsApp · Today</p>
+      <div class="chat-row right">
+        <div class="bubble sent">Fixed Mrs Johnson's hot water today. Parts $340, 3hrs labour @ $120/hr. Send invoice.</div>
+      </div>
+      <div class="chat-row left">
+        <div class="bubble received">Done ✓ Invoice sent to Mrs Johnson for <span class="amount">$737.00 inc GST</span>. Want a copy for your records?</div>
+      </div>
+      <div class="chat-row right">
+        <div class="bubble sent">Yes please</div>
+      </div>
+      <div class="chat-row left">
+        <div class="bubble received">Sent 📄 Invoice #0042 on its way to your inbox.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Features -->
+<section class="section-features">
+  <div class="inner-760">
+    <p class="section-label">Why Billvox</p>
+    <h2 class="section-title">Built for tradies who'd rather be working.</h2>
+    <div class="feature-grid">
+      <div class="feature-card">
+        <div class="feature-icon">💬</div>
+        <div class="feature-title">Just text it</div>
+        <div class="feature-desc">WhatsApp or SMS. However you'd explain it to a mate.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">⚡</div>
+        <div class="feature-title">Invoice in seconds</div>
+        <div class="feature-desc">AI builds a professional invoice with correct GST and sends it straight away.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📋</div>
+        <div class="feature-title">Quotes too</div>
+        <div class="feature-desc">Text the scope, get a quote for customer approval before you start.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🔗</div>
+        <div class="feature-title">Works with Xero</div>
+        <div class="feature-desc">A shortcut alongside your existing tools — not a replacement.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- How It Works -->
+<section class="section-how">
+  <div class="inner-760">
+    <p class="section-label">How it works</p>
+    <h2 class="section-title">Three messages. Job invoiced.</h2>
+    <div class="steps-grid">
+      <div>
+        <div class="step-num">1</div>
+        <div class="step-title">Text the job</div>
+        <div class="step-desc">Describe what you did, time spent, and parts used. Plain English, no format needed.</div>
+      </div>
+      <div>
+        <div class="step-num">2</div>
+        <div class="step-title">We build the invoice</div>
+        <div class="step-desc">AI parses your message and generates a clean PDF — GST calculated correctly.</div>
+      </div>
+      <div>
+        <div class="step-num">3</div>
+        <div class="step-title">Customer gets it</div>
+        <div class="step-desc">PDF in their inbox, copy in yours. No spreadsheet, no app, no end-of-week pile.</div>
+      </div>
+      <div>
+        <div class="step-num">4</div>
+        <div class="step-title">Get paid faster</div>
+        <div class="step-desc">Invoice at the job. Customers pay quicker when it arrives while the work is fresh.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Stats -->
+<section class="section-stats">
+  <div class="inner-760">
+    <p class="section-label">The problem</p>
+    <h2 class="section-title">Admin is the job nobody quotes for.</h2>
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-num">4.2 hrs</div>
+        <div class="stat-desc">Admin time lost per week for sole-trader tradies</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">$8,400</div>
+        <div class="stat-desc">Annual revenue lost to late or forgotten invoices</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">73%</div>
+        <div class="stat-desc">Of tradies invoice from memory at the end of the day</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">0</div>
+        <div class="stat-desc">New apps, logins, or screens to fill in</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section-faq">
+  <div class="inner-640">
+    <p class="section-label">FAQ</p>
+    <h2 class="faq-title">Common questions</h2>
+    <div class="faq-list">
+      <details>
+        <summary>Do I need to download an app? <span class="faq-icon">+</span></summary>
+        <p>Nope. Billvox works over WhatsApp or SMS — channels already on your phone. Nothing to install.</p>
+      </details>
+      <details>
+        <summary>Is GST calculated automatically? <span class="faq-icon">+</span></summary>
+        <p>Yes. Billvox applies 10% GST and formats invoices to ATO standards — labour, materials, subtotal, GST, and total all broken out correctly.</p>
+      </details>
+      <details>
+        <summary>What if I make a mistake in my message? <span class="faq-icon">+</span></summary>
+        <p>Just text a correction. Billvox updates the invoice and resends it. You can also review before it goes out.</p>
+      </details>
+      <details>
+        <summary>Does it work with Xero or MYOB? <span class="faq-icon">+</span></summary>
+        <p>Integrations are on the roadmap. Early access users get invoices as PDFs — takes 30 seconds to upload manually.</p>
+      </details>
+      <details>
+        <summary>How much does it cost? <span class="faq-icon">+</span></summary>
+        <p>Still being worked out — early access users get a meaningful discount and input on what we build. Register and you'll be first to know.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- Bottom CTA -->
+<section class="section-cta">
+  <h2>Stop doing admin at 9pm.</h2>
+  <p class="cta-sub">Get early access when we launch.</p>
+  <div class="cta-wrap">
+    <div id="bottom-form">
+      <input id="b-name" class="form-input-dark" type="text" placeholder="Your name">
+      <input id="b-email" class="form-input-dark" type="email" placeholder="Email address">
+      <input id="b-phone" class="form-input-dark" type="tel" placeholder="Mobile (optional)">
+      <button class="btn-white" onclick="submitBottom()">Join the waitlist →</button>
+    </div>
+    <div id="bottom-success" class="form-success-dark">✓ You're on the list. We'll be in touch!</div>
+    <p class="form-note-dark">No spam. Unsubscribe any time.</p>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <span class="footer-logo">Billvox</span>
+  <span class="footer-copy">© 2026 Billvox · billvox.com.au · Melbourne, AU</span>
+</footer>
+
+<script>
+function submitHero() {
+  const e = document.getElementById('h-email').value.trim();
+  if (!e) { document.getElementById('h-email').style.borderColor = '#2563eb'; return; }
+  document.getElementById('hero-form').style.display = 'none';
+  document.getElementById('hero-success').style.display = 'block';
+}
+function submitBottom() {
+  const e = document.getElementById('b-email').value.trim();
+  if (!e) { document.getElementById('b-email').style.borderColor = 'rgba(255,255,255,0.6)'; return; }
+  document.getElementById('bottom-form').style.display = 'none';
+  document.getElementById('bottom-success').style.display = 'block';
+}
+</script>
+
+</body>
+</html>
