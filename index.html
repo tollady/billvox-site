@@ -40,7 +40,7 @@
       <input id="h-name" type="text" placeholder="Your name" class="w-full border border-gray-200 text-gray-900 rounded-lg px-4 py-[0.65rem] text-sm mb-2 outline-none bg-white">
       <input id="h-email" type="email" placeholder="Email address" class="w-full border border-gray-200 text-gray-900 rounded-lg px-4 py-[0.65rem] text-sm mb-2 outline-none bg-white">
       <input id="h-phone" type="tel" placeholder="Mobile number (optional)" class="w-full border border-gray-200 text-gray-900 rounded-lg px-4 py-[0.65rem] text-sm mb-3 outline-none bg-white">
-      <button onclick="submitHero()" class="w-full bg-blue-600 text-white font-bold text-[0.95rem] py-[0.72rem] rounded-lg border-none cursor-pointer">
+      <button onclick="submitForm('hero')" class="w-full bg-blue-600 text-white font-bold text-[0.95rem] py-[0.72rem] rounded-lg border-none cursor-pointer">
         Register interest →
       </button>
     </div>
@@ -212,7 +212,7 @@
       <input id="b-name" type="text" placeholder="Your name" class="w-full bg-white/10 border border-white/20 text-white rounded-lg px-4 py-[0.65rem] text-sm mb-2 outline-none">
       <input id="b-email" type="email" placeholder="Email address" class="w-full bg-white/10 border border-white/20 text-white rounded-lg px-4 py-[0.65rem] text-sm mb-2 outline-none">
       <input id="b-phone" type="tel" placeholder="Mobile (optional)" class="w-full bg-white/10 border border-white/20 text-white rounded-lg px-4 py-[0.65rem] text-sm mb-3 outline-none">
-      <button onclick="submitBottom()" class="w-full bg-white text-blue-600 font-bold text-[0.95rem] py-[0.72rem] rounded-lg border-none cursor-pointer">Join the waitlist →</button>
+      <button onclick="submitForm('bottom')" class="w-full bg-white text-blue-600 font-bold text-[0.95rem] py-[0.72rem] rounded-lg border-none cursor-pointer">Join the waitlist →</button>
     </div>
     <div id="bottom-success" class="hidden bg-white/[0.12] border border-white/25 text-white p-4 rounded-lg font-semibold text-[0.9rem]">
       ✓ You're on the list. We'll be in touch!
@@ -229,17 +229,24 @@
 </footer>
 
 <script>
-function submitHero() {
-  const e = document.getElementById('h-email').value.trim();
-  if (!e) { document.getElementById('h-email').classList.add('border-blue-600'); return; }
-  document.getElementById('hero-form').classList.add('hidden');
-  document.getElementById('hero-success').classList.remove('hidden');
-}
-function submitBottom() {
-  const e = document.getElementById('b-email').value.trim();
-  if (!e) { document.getElementById('b-email').classList.add('border-white/60'); return; }
-  document.getElementById('bottom-form').classList.add('hidden');
-  document.getElementById('bottom-success').classList.remove('hidden');
+async function submitForm(formId) {
+  const prefix = formId === 'hero' ? 'h' : 'b';
+  const name = document.getElementById(prefix + '-name').value;
+  const email = document.getElementById(prefix + '-email').value;
+  const phone = document.getElementById(prefix + '-phone').value;
+
+  if (!email) return;
+
+  const res = await fetch('https://billvox-worker.ben-25b.workers.dev', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ name, email, phone })
+  });
+
+  if (res.ok) {
+    document.getElementById(formId + '-form').style.display = 'none';
+    document.getElementById(formId + '-success').style.display = 'block';
+  }
 }
 </script>
 </body>
