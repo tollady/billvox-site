@@ -1,224 +1,246 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="corporate">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Billvox — Quotes & invoices sent straight from the job</title>
-  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Billvox — Quotes & invoices sent straight from the job</title>
+<link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  * { font-family: 'Inter', sans-serif; }
+  input::placeholder { color: #9ca3af; }
+  details summary::-webkit-details-marker { display: none; }
+</style>
 </head>
-<body>
+<body class="bg-white">
 
 <!-- Nav -->
-<nav class="nav">
-  <span class="nav-logo">Billvox</span>
-  <a href="#waitlist" class="nav-cta">Join waitlist</a>
+<nav class="border-b border-gray-200 bg-white sticky top-0 z-50 px-6">
+  <div class="max-w-5xl mx-auto h-[58px] flex items-center justify-between">
+    <span class="font-extrabold text-[1.1rem] tracking-tight text-gray-900">Billvox</span>
+    <a href="#waitlist" class="bg-blue-600 text-white text-[0.8rem] font-semibold px-4 py-[0.42rem] rounded-md no-underline">Join waitlist</a>
+  </div>
 </nav>
 
 <!-- Hero -->
-<section class="hero-section">
-  <div class="hero-badge">🚧 Coming soon · Melbourne, AU</div>
-  <h1>Quotes &amp; invoices sent<br><span>straight from the job.</span></h1>
-  <p class="hero-sub">Text us what you've done. We send the invoice. No app, no admin when you get home.</p>
+<section id="waitlist" class="px-6 pt-[5.5rem] pb-16 text-center bg-white">
+  <div class="inline-flex items-center gap-1 bg-blue-50 border border-blue-200 text-blue-700 text-[0.72rem] font-semibold px-3.5 py-[0.28rem] rounded-full mb-7 tracking-wide">
+    🚧 Coming soon · Melbourne, AU
+  </div>
+  <h1 class="text-[clamp(2.2rem,5vw,3.4rem)] font-extrabold leading-[1.1] tracking-tight text-gray-900 max-w-[640px] mx-auto mb-5">
+    Quotes &amp; invoices sent<br><span class="text-blue-600">straight from the job.</span>
+  </h1>
+  <p class="text-gray-500 text-[1.05rem] max-w-[460px] mx-auto mb-9 leading-[1.65]">
+    Text us what you've done. We send the invoice. No app, no admin when you get home.
+  </p>
 
-  <div class="waitlist-wrap" id="waitlist">
+  <div class="max-w-[400px] mx-auto">
     <div id="hero-form">
-      <input id="h-name" class="form-input" type="text" placeholder="Your name">
-      <input id="h-email" class="form-input" type="email" placeholder="Email address">
-      <input id="h-phone" class="form-input" type="tel" placeholder="Mobile number (optional)">
-      <button class="btn-primary" onclick="submitHero()">Register interest →</button>
+      <input id="h-name" type="text" placeholder="Your name" class="w-full border border-gray-200 text-gray-900 rounded-lg px-4 py-[0.65rem] text-sm mb-2 outline-none bg-white">
+      <input id="h-email" type="email" placeholder="Email address" class="w-full border border-gray-200 text-gray-900 rounded-lg px-4 py-[0.65rem] text-sm mb-2 outline-none bg-white">
+      <input id="h-phone" type="tel" placeholder="Mobile number (optional)" class="w-full border border-gray-200 text-gray-900 rounded-lg px-4 py-[0.65rem] text-sm mb-3 outline-none bg-white">
+      <button onclick="submitHero()" class="w-full bg-blue-600 text-white font-bold text-[0.95rem] py-[0.72rem] rounded-lg border-none cursor-pointer">
+        Register interest →
+      </button>
     </div>
-    <div id="hero-success" class="form-success">✓ You're on the list. We'll be in touch!</div>
-    <p class="form-note">No spam. Early access only.</p>
+    <div id="hero-success" class="hidden bg-blue-50 border border-blue-200 text-blue-700 p-4 rounded-lg font-semibold text-[0.9rem]">
+      ✓ You're on the list. We'll be in touch!
+    </div>
+    <p class="text-gray-400 text-xs mt-3">No spam. Early access only.</p>
   </div>
 
-  <div class="avatar-row">
-    <div class="avatar-stack">
-      <div class="avatar avatar-1">BM</div>
-      <div class="avatar avatar-2">SL</div>
-      <div class="avatar avatar-3">TK</div>
-      <div class="avatar avatar-4">JP</div>
+  <div class="flex items-center justify-center gap-2 mt-8">
+    <div class="flex">
+      <div class="w-[30px] h-[30px] rounded-full bg-blue-100 border-2 border-white flex items-center justify-center text-[0.62rem] font-bold text-blue-700 -ml-[6px]">BM</div>
+      <div class="w-[30px] h-[30px] rounded-full bg-indigo-100 border-2 border-white flex items-center justify-center text-[0.62rem] font-bold text-indigo-700 -ml-[6px]">SL</div>
+      <div class="w-[30px] h-[30px] rounded-full bg-green-100 border-2 border-white flex items-center justify-center text-[0.62rem] font-bold text-green-700 -ml-[6px]">TK</div>
+      <div class="w-[30px] h-[30px] rounded-full bg-yellow-100 border-2 border-white flex items-center justify-center text-[0.62rem] font-bold text-yellow-700 -ml-[6px]">JP</div>
     </div>
-    <span class="avatar-label">Join <strong>47 tradies</strong> already on the list</span>
+    <span class="text-gray-400 text-[0.8rem]">Join <strong class="text-gray-700">47 tradies</strong> already on the list</span>
   </div>
 </section>
 
 <!-- SMS Demo -->
-<section class="section-demo">
-  <div class="inner-560">
-    <p class="section-label">See it in action</p>
-    <div class="chat-window">
-      <p class="chat-header">WhatsApp · Today</p>
-      <div class="chat-row right">
-        <div class="bubble sent">Fixed Mrs Johnson's hot water today. Parts $340, 3hrs labour @ $120/hr. Send invoice.</div>
+<section class="bg-gray-50 border-y border-gray-100 py-14 px-6">
+  <div class="max-w-[560px] mx-auto">
+    <p class="text-center text-[0.7rem] font-semibold tracking-[0.1em] uppercase text-gray-400 mb-6">See it in action</p>
+    <div class="bg-white border border-gray-200 rounded-2xl p-6">
+      <p class="text-[0.7rem] font-semibold tracking-[0.08em] uppercase text-gray-400 mb-5">WhatsApp · Today</p>
+      <div class="flex justify-end mb-[0.6rem]">
+        <div class="bg-blue-600 text-white px-[0.9rem] py-[0.65rem] rounded-[16px_16px_3px_16px] text-[0.87rem] leading-[1.5] max-w-[80%]">Fixed Mrs Johnson's hot water today. Parts $340, 3hrs labour @ $120/hr. Send invoice.</div>
       </div>
-      <div class="chat-row left">
-        <div class="bubble received">Done ✓ Invoice sent to Mrs Johnson for <span class="amount">$737.00 inc GST</span>. Want a copy for your records?</div>
+      <div class="flex justify-start mb-[0.6rem]">
+        <div class="bg-gray-100 px-[0.9rem] py-[0.65rem] rounded-[16px_16px_16px_3px] text-[0.87rem] leading-[1.5] max-w-[80%] text-gray-900">
+          Done ✓ Invoice sent to Mrs Johnson for <strong class="text-green-600">$737.00 inc GST</strong>. Want a copy for your records?
+        </div>
       </div>
-      <div class="chat-row right">
-        <div class="bubble sent">Yes please</div>
+      <div class="flex justify-end mb-[0.6rem]">
+        <div class="bg-blue-600 text-white px-[0.9rem] py-[0.65rem] rounded-[16px_16px_3px_16px] text-[0.87rem] max-w-[80%]">Yes please</div>
       </div>
-      <div class="chat-row left">
-        <div class="bubble received">Sent 📄 Invoice #0042 on its way to your inbox.</div>
+      <div class="flex justify-start">
+        <div class="bg-gray-100 px-[0.9rem] py-[0.65rem] rounded-[16px_16px_16px_3px] text-[0.87rem] leading-[1.5] max-w-[80%] text-gray-900">
+          Sent 📄 Invoice #0042 on its way to your inbox.
+        </div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- Features -->
-<section class="section-features">
-  <div class="inner-760">
-    <p class="section-label">Why Billvox</p>
-    <h2 class="section-title">Built for tradies who'd rather be working.</h2>
-    <div class="feature-grid">
-      <div class="feature-card">
-        <div class="feature-icon">💬</div>
-        <div class="feature-title">Just text it</div>
-        <div class="feature-desc">WhatsApp or SMS. However you'd explain it to a mate.</div>
+<section class="bg-white py-16 px-6">
+  <div class="max-w-[760px] mx-auto">
+    <p class="text-[0.7rem] font-semibold tracking-[0.1em] uppercase text-gray-400 mb-2">Why Billvox</p>
+    <h2 class="text-[clamp(1.6rem,3.5vw,2.1rem)] font-extrabold tracking-tight text-gray-900 mb-10 leading-[1.2] max-w-[420px]">Built for tradies who'd rather be working.</h2>
+    <div class="grid grid-cols-2 gap-px bg-gray-100 border border-gray-100 rounded-xl overflow-hidden">
+      <div class="bg-white p-6">
+        <div class="text-[1.4rem] mb-3">💬</div>
+        <div class="font-bold text-[0.88rem] text-gray-900 mb-[0.35rem]">Just text it</div>
+        <div class="text-[0.81rem] text-gray-500 leading-[1.55]">WhatsApp or SMS. However you'd explain it to a mate.</div>
       </div>
-      <div class="feature-card">
-        <div class="feature-icon">⚡</div>
-        <div class="feature-title">Invoice in seconds</div>
-        <div class="feature-desc">AI builds a professional invoice with correct GST and sends it straight away.</div>
+      <div class="bg-white p-6">
+        <div class="text-[1.4rem] mb-3">⚡</div>
+        <div class="font-bold text-[0.88rem] text-gray-900 mb-[0.35rem]">Invoice in seconds</div>
+        <div class="text-[0.81rem] text-gray-500 leading-[1.55]">AI builds a professional invoice with correct GST and sends it straight away.</div>
       </div>
-      <div class="feature-card">
-        <div class="feature-icon">📋</div>
-        <div class="feature-title">Quotes too</div>
-        <div class="feature-desc">Text the scope, get a quote for customer approval before you start.</div>
+      <div class="bg-white p-6">
+        <div class="text-[1.4rem] mb-3">📋</div>
+        <div class="font-bold text-[0.88rem] text-gray-900 mb-[0.35rem]">Quotes too</div>
+        <div class="text-[0.81rem] text-gray-500 leading-[1.55]">Text the scope, get a quote for customer approval before you start.</div>
       </div>
-      <div class="feature-card">
-        <div class="feature-icon">🔗</div>
-        <div class="feature-title">Works with Xero</div>
-        <div class="feature-desc">A shortcut alongside your existing tools — not a replacement.</div>
+      <div class="bg-white p-6">
+        <div class="text-[1.4rem] mb-3">🔗</div>
+        <div class="font-bold text-[0.88rem] text-gray-900 mb-[0.35rem]">Works with Xero</div>
+        <div class="text-[0.81rem] text-gray-500 leading-[1.55]">A shortcut alongside your existing tools — not a replacement.</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- How It Works -->
-<section class="section-how">
-  <div class="inner-760">
-    <p class="section-label">How it works</p>
-    <h2 class="section-title">Three messages. Job invoiced.</h2>
-    <div class="steps-grid">
+<!-- How it works -->
+<section class="bg-gray-50 border-y border-gray-100 py-16 px-6">
+  <div class="max-w-[760px] mx-auto">
+    <p class="text-[0.7rem] font-semibold tracking-[0.1em] uppercase text-gray-400 mb-2">How it works</p>
+    <h2 class="text-[clamp(1.6rem,3.5vw,2.1rem)] font-extrabold tracking-tight text-gray-900 mb-10 leading-[1.2]">Three messages. Job invoiced.</h2>
+    <div class="grid grid-cols-2 sm:grid-cols-4 gap-8">
       <div>
-        <div class="step-num">1</div>
-        <div class="step-title">Text the job</div>
-        <div class="step-desc">Describe what you did, time spent, and parts used. Plain English, no format needed.</div>
+        <div class="w-8 h-8 bg-blue-50 rounded-lg flex items-center justify-center font-extrabold text-[0.85rem] text-blue-600 mb-[0.85rem]">1</div>
+        <div class="font-bold text-[0.88rem] text-gray-900 mb-[0.35rem]">Text the job</div>
+        <div class="text-[0.81rem] text-gray-500 leading-[1.55]">Describe what you did, time spent, and parts used. Plain English, no format needed.</div>
       </div>
       <div>
-        <div class="step-num">2</div>
-        <div class="step-title">We build the invoice</div>
-        <div class="step-desc">AI parses your message and generates a clean PDF — GST calculated correctly.</div>
+        <div class="w-8 h-8 bg-blue-50 rounded-lg flex items-center justify-center font-extrabold text-[0.85rem] text-blue-600 mb-[0.85rem]">2</div>
+        <div class="font-bold text-[0.88rem] text-gray-900 mb-[0.35rem]">We build the invoice</div>
+        <div class="text-[0.81rem] text-gray-500 leading-[1.55]">AI parses your message and generates a clean PDF — GST calculated correctly.</div>
       </div>
       <div>
-        <div class="step-num">3</div>
-        <div class="step-title">Customer gets it</div>
-        <div class="step-desc">PDF in their inbox, copy in yours. No spreadsheet, no app, no end-of-week pile.</div>
+        <div class="w-8 h-8 bg-blue-50 rounded-lg flex items-center justify-center font-extrabold text-[0.85rem] text-blue-600 mb-[0.85rem]">3</div>
+        <div class="font-bold text-[0.88rem] text-gray-900 mb-[0.35rem]">Customer gets it</div>
+        <div class="text-[0.81rem] text-gray-500 leading-[1.55]">PDF in their inbox, copy in yours. No spreadsheet, no app, no end-of-week pile.</div>
       </div>
       <div>
-        <div class="step-num">4</div>
-        <div class="step-title">Get paid faster</div>
-        <div class="step-desc">Invoice at the job. Customers pay quicker when it arrives while the work is fresh.</div>
+        <div class="w-8 h-8 bg-blue-50 rounded-lg flex items-center justify-center font-extrabold text-[0.85rem] text-blue-600 mb-[0.85rem]">4</div>
+        <div class="font-bold text-[0.88rem] text-gray-900 mb-[0.35rem]">Get paid faster</div>
+        <div class="text-[0.81rem] text-gray-500 leading-[1.55]">Invoice at the job. Customers pay quicker when it arrives while the work is fresh.</div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- Stats -->
-<section class="section-stats">
-  <div class="inner-760">
-    <p class="section-label">The problem</p>
-    <h2 class="section-title">Admin is the job nobody quotes for.</h2>
-    <div class="stats-grid">
-      <div class="stat-card">
-        <div class="stat-num">4.2 hrs</div>
-        <div class="stat-desc">Admin time lost per week for sole-trader tradies</div>
+<section class="bg-white py-16 px-6">
+  <div class="max-w-[760px] mx-auto">
+    <p class="text-[0.7rem] font-semibold tracking-[0.1em] uppercase text-gray-400 mb-2">The problem</p>
+    <h2 class="text-[clamp(1.6rem,3.5vw,2.1rem)] font-extrabold tracking-tight text-gray-900 mb-10 leading-[1.2]">Admin is the job nobody quotes for.</h2>
+    <div class="grid grid-cols-2 sm:grid-cols-4 gap-6">
+      <div class="bg-gray-50 border border-gray-100 rounded-[10px] p-5">
+        <div class="text-[1.75rem] font-extrabold text-gray-900 tracking-tight leading-none mb-2">4.2 hrs</div>
+        <div class="text-[0.78rem] text-gray-500 leading-[1.45]">Admin time lost per week for sole-trader tradies</div>
       </div>
-      <div class="stat-card">
-        <div class="stat-num">$8,400</div>
-        <div class="stat-desc">Annual revenue lost to late or forgotten invoices</div>
+      <div class="bg-gray-50 border border-gray-100 rounded-[10px] p-5">
+        <div class="text-[1.75rem] font-extrabold text-gray-900 tracking-tight leading-none mb-2">$8,400</div>
+        <div class="text-[0.78rem] text-gray-500 leading-[1.45]">Annual revenue lost to late or forgotten invoices</div>
       </div>
-      <div class="stat-card">
-        <div class="stat-num">73%</div>
-        <div class="stat-desc">Of tradies invoice from memory at the end of the day</div>
+      <div class="bg-gray-50 border border-gray-100 rounded-[10px] p-5">
+        <div class="text-[1.75rem] font-extrabold text-gray-900 tracking-tight leading-none mb-2">73%</div>
+        <div class="text-[0.78rem] text-gray-500 leading-[1.45]">Of tradies invoice from memory at the end of the day</div>
       </div>
-      <div class="stat-card">
-        <div class="stat-num">0</div>
-        <div class="stat-desc">New apps, logins, or screens to fill in</div>
+      <div class="bg-gray-50 border border-gray-100 rounded-[10px] p-5">
+        <div class="text-[1.75rem] font-extrabold text-gray-900 tracking-tight leading-none mb-2">0</div>
+        <div class="text-[0.78rem] text-gray-500 leading-[1.45]">New apps, logins, or screens to fill in</div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- FAQ -->
-<section class="section-faq">
-  <div class="inner-640">
-    <p class="section-label">FAQ</p>
-    <h2 class="faq-title">Common questions</h2>
-    <div class="faq-list">
-      <details>
-        <summary>Do I need to download an app? <span class="faq-icon">+</span></summary>
-        <p>Nope. Billvox works over WhatsApp or SMS — channels already on your phone. Nothing to install.</p>
+<section class="bg-gray-50 border-y border-gray-100 py-16 px-6">
+  <div class="max-w-[640px] mx-auto">
+    <p class="text-[0.7rem] font-semibold tracking-[0.1em] uppercase text-gray-400 mb-2 text-center">FAQ</p>
+    <h2 class="text-[clamp(1.4rem,3vw,1.9rem)] font-extrabold tracking-tight text-gray-900 mb-8 text-center leading-[1.2]">Common questions</h2>
+    <div class="border border-gray-200 rounded-xl overflow-hidden bg-white">
+      <details class="border-b border-gray-100">
+        <summary class="px-5 py-4 text-[0.88rem] font-semibold text-gray-900 cursor-pointer list-none flex justify-between items-center">Do I need to download an app?<span class="text-gray-400 text-base font-normal">+</span></summary>
+        <p class="px-5 pb-4 text-[0.83rem] text-gray-500 leading-[1.6] m-0">Nope. Billvox works over WhatsApp or SMS — channels already on your phone. Nothing to install.</p>
+      </details>
+      <details class="border-b border-gray-100">
+        <summary class="px-5 py-4 text-[0.88rem] font-semibold text-gray-900 cursor-pointer list-none flex justify-between items-center">Is GST calculated automatically?<span class="text-gray-400 text-base font-normal">+</span></summary>
+        <p class="px-5 pb-4 text-[0.83rem] text-gray-500 leading-[1.6] m-0">Yes. Billvox applies 10% GST and formats invoices to ATO standards — labour, materials, subtotal, GST, and total all broken out correctly.</p>
+      </details>
+      <details class="border-b border-gray-100">
+        <summary class="px-5 py-4 text-[0.88rem] font-semibold text-gray-900 cursor-pointer list-none flex justify-between items-center">What if I make a mistake in my message?<span class="text-gray-400 text-base font-normal">+</span></summary>
+        <p class="px-5 pb-4 text-[0.83rem] text-gray-500 leading-[1.6] m-0">Just text a correction. Billvox updates the invoice and resends it. You can also review before it goes out.</p>
+      </details>
+      <details class="border-b border-gray-100">
+        <summary class="px-5 py-4 text-[0.88rem] font-semibold text-gray-900 cursor-pointer list-none flex justify-between items-center">Does it work with Xero or MYOB?<span class="text-gray-400 text-base font-normal">+</span></summary>
+        <p class="px-5 pb-4 text-[0.83rem] text-gray-500 leading-[1.6] m-0">Integrations are on the roadmap. Early access users get invoices as PDFs — takes 30 seconds to upload manually.</p>
       </details>
       <details>
-        <summary>Is GST calculated automatically? <span class="faq-icon">+</span></summary>
-        <p>Yes. Billvox applies 10% GST and formats invoices to ATO standards — labour, materials, subtotal, GST, and total all broken out correctly.</p>
-      </details>
-      <details>
-        <summary>What if I make a mistake in my message? <span class="faq-icon">+</span></summary>
-        <p>Just text a correction. Billvox updates the invoice and resends it. You can also review before it goes out.</p>
-      </details>
-      <details>
-        <summary>Does it work with Xero or MYOB? <span class="faq-icon">+</span></summary>
-        <p>Integrations are on the roadmap. Early access users get invoices as PDFs — takes 30 seconds to upload manually.</p>
-      </details>
-      <details>
-        <summary>How much does it cost? <span class="faq-icon">+</span></summary>
-        <p>Still being worked out — early access users get a meaningful discount and input on what we build. Register and you'll be first to know.</p>
+        <summary class="px-5 py-4 text-[0.88rem] font-semibold text-gray-900 cursor-pointer list-none flex justify-between items-center">How much does it cost?<span class="text-gray-400 text-base font-normal">+</span></summary>
+        <p class="px-5 pb-4 text-[0.83rem] text-gray-500 leading-[1.6] m-0">Still being worked out — early access users get a meaningful discount and input on what we build. Register and you'll be first to know.</p>
       </details>
     </div>
   </div>
 </section>
 
 <!-- Bottom CTA -->
-<section class="section-cta">
-  <h2>Stop doing admin at 9pm.</h2>
-  <p class="cta-sub">Get early access when we launch.</p>
-  <div class="cta-wrap">
+<section class="bg-blue-600 py-20 px-6 text-center">
+  <h2 class="text-white text-[clamp(1.8rem,4vw,2.6rem)] font-extrabold tracking-tight mb-3 leading-[1.15]">Stop doing admin at 9pm.</h2>
+  <p class="text-blue-200 text-base mb-10">Get early access when we launch.</p>
+  <div class="max-w-[380px] mx-auto">
     <div id="bottom-form">
-      <input id="b-name" class="form-input-dark" type="text" placeholder="Your name">
-      <input id="b-email" class="form-input-dark" type="email" placeholder="Email address">
-      <input id="b-phone" class="form-input-dark" type="tel" placeholder="Mobile (optional)">
-      <button class="btn-white" onclick="submitBottom()">Join the waitlist →</button>
+      <input id="b-name" type="text" placeholder="Your name" class="w-full bg-white/10 border border-white/20 text-white rounded-lg px-4 py-[0.65rem] text-sm mb-2 outline-none">
+      <input id="b-email" type="email" placeholder="Email address" class="w-full bg-white/10 border border-white/20 text-white rounded-lg px-4 py-[0.65rem] text-sm mb-2 outline-none">
+      <input id="b-phone" type="tel" placeholder="Mobile (optional)" class="w-full bg-white/10 border border-white/20 text-white rounded-lg px-4 py-[0.65rem] text-sm mb-3 outline-none">
+      <button onclick="submitBottom()" class="w-full bg-white text-blue-600 font-bold text-[0.95rem] py-[0.72rem] rounded-lg border-none cursor-pointer">Join the waitlist →</button>
     </div>
-    <div id="bottom-success" class="form-success-dark">✓ You're on the list. We'll be in touch!</div>
-    <p class="form-note-dark">No spam. Unsubscribe any time.</p>
+    <div id="bottom-success" class="hidden bg-white/[0.12] border border-white/25 text-white p-4 rounded-lg font-semibold text-[0.9rem]">
+      ✓ You're on the list. We'll be in touch!
+    </div>
+    <p class="text-white/40 text-xs mt-3">No spam. Unsubscribe any time.</p>
   </div>
 </section>
 
-<!-- Footer -->
-<footer>
-  <span class="footer-logo">Billvox</span>
-  <span class="footer-copy">© 2026 Billvox · billvox.com.au · Melbourne, AU</span>
+<footer class="bg-blue-800 px-6 py-5">
+  <div class="max-w-5xl mx-auto flex items-center justify-between flex-wrap gap-2">
+    <span class="text-blue-200 font-bold text-[0.9rem]">Billvox</span>
+    <span class="text-blue-300 text-xs">© 2026 Billvox · billvox.com.au · Melbourne, AU</span>
+  </div>
 </footer>
 
 <script>
 function submitHero() {
   const e = document.getElementById('h-email').value.trim();
-  if (!e) { document.getElementById('h-email').style.borderColor = '#2563eb'; return; }
-  document.getElementById('hero-form').style.display = 'none';
-  document.getElementById('hero-success').style.display = 'block';
+  if (!e) { document.getElementById('h-email').classList.add('border-blue-600'); return; }
+  document.getElementById('hero-form').classList.add('hidden');
+  document.getElementById('hero-success').classList.remove('hidden');
 }
 function submitBottom() {
   const e = document.getElementById('b-email').value.trim();
-  if (!e) { document.getElementById('b-email').style.borderColor = 'rgba(255,255,255,0.6)'; return; }
-  document.getElementById('bottom-form').style.display = 'none';
-  document.getElementById('bottom-success').style.display = 'block';
+  if (!e) { document.getElementById('b-email').classList.add('border-white/60'); return; }
+  document.getElementById('bottom-form').classList.add('hidden');
+  document.getElementById('bottom-success').classList.remove('hidden');
 }
 </script>
-
 </body>
 </html>
