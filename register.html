@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Get started — Billvox</title>
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      background: #ffffff;
+      color: #111827;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 48px 20px 64px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 420px;
+    }
+
+    /* Logo */
+    .logo {
+      font-size: 26px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: #0f172a;
+      margin-bottom: 10px;
+    }
+
+    .tagline {
+      font-size: 15px;
+      color: #6b7280;
+      line-height: 1.5;
+      margin-bottom: 36px;
+    }
+
+    /* Form fields */
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      font-size: 14px;
+      font-weight: 500;
+      color: #374151;
+      margin-bottom: 6px;
+    }
+
+    .optional {
+      font-weight: 400;
+      color: #9ca3af;
+      font-size: 13px;
+    }
+
+    input {
+      width: 100%;
+      padding: 11px 14px;
+      font-size: 16px;
+      font-family: inherit;
+      border: 1.5px solid #d1d5db;
+      border-radius: 8px;
+      outline: none;
+      color: #111827;
+      background: #ffffff;
+      -webkit-appearance: none;
+      transition: border-color 0.12s, box-shadow 0.12s;
+    }
+
+    input:focus {
+      border-color: #2563eb;
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+    }
+
+    input::placeholder {
+      color: #9ca3af;
+    }
+
+    /* Dollar prefix input */
+    .prefix-wrap {
+      display: flex;
+    }
+
+    .prefix {
+      display: flex;
+      align-items: center;
+      padding: 0 12px;
+      background: #f9fafb;
+      border: 1.5px solid #d1d5db;
+      border-right: none;
+      border-radius: 8px 0 0 8px;
+      font-size: 15px;
+      font-weight: 500;
+      color: #6b7280;
+      user-select: none;
+    }
+
+    .prefix-wrap input {
+      border-radius: 0 8px 8px 0;
+      flex: 1;
+    }
+
+    .prefix-wrap:focus-within .prefix {
+      border-color: #2563eb;
+    }
+
+    .prefix-wrap:focus-within input {
+      border-color: #2563eb;
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+    }
+
+    /* Submit button */
+    .btn {
+      display: block;
+      width: 100%;
+      margin-top: 8px;
+      padding: 13px;
+      background: #2563eb;
+      color: #ffffff;
+      font-size: 16px;
+      font-weight: 600;
+      font-family: inherit;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.12s, opacity 0.12s;
+    }
+
+    .btn:hover:not(:disabled) {
+      background: #1d4ed8;
+    }
+
+    .btn:disabled {
+      opacity: 0.65;
+      cursor: not-allowed;
+    }
+
+    /* Inline messages */
+    .msg {
+      display: none;
+      margin-top: 16px;
+      padding: 12px 14px;
+      border-radius: 8px;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .msg.error {
+      background: #fef2f2;
+      color: #991b1b;
+      border: 1px solid #fecaca;
+    }
+
+    .msg.info {
+      background: #eff6ff;
+      color: #1e40af;
+      border: 1px solid #bfdbfe;
+    }
+
+    .msg.visible {
+      display: block;
+    }
+
+    /* Footer line */
+    .footer {
+      margin-top: 20px;
+      font-size: 14px;
+      color: #9ca3af;
+      text-align: center;
+    }
+
+    /* Success state */
+    .success {
+      display: none;
+      text-align: center;
+      padding: 24px 0;
+    }
+
+    .success.visible {
+      display: block;
+    }
+
+    .success-emoji {
+      font-size: 44px;
+      margin-bottom: 16px;
+    }
+
+    .success-heading {
+      font-size: 20px;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 8px;
+    }
+
+    .success-body {
+      font-size: 15px;
+      color: #6b7280;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="logo">Billvox</div>
+    <p class="tagline">Get set up in 30 seconds. We'll send you a WhatsApp confirmation.</p>
+
+    <div id="form-view">
+      <form id="register-form" novalidate>
+
+        <div class="form-group">
+          <label for="business_name">Business name</label>
+          <input
+            type="text"
+            id="business_name"
+            name="business_name"
+            placeholder="e.g. Smith Plumbing"
+            autocomplete="organization"
+            autocapitalize="words"
+            required
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="abn">ABN <span class="optional">(optional)</span></label>
+          <input
+            type="text"
+            id="abn"
+            name="abn"
+            placeholder="e.g. 12 345 678 901"
+            inputmode="numeric"
+            autocomplete="off"
+            autocorrect="off"
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Mobile number</label>
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            placeholder="e.g. 0412 345 678"
+            autocomplete="tel"
+            required
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email address</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Invoices will be sent from this address"
+            autocomplete="email"
+            autocapitalize="none"
+            required
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="hourly_rate">Hourly rate</label>
+          <div class="prefix-wrap">
+            <span class="prefix">$</span>
+            <input
+              type="text"
+              id="hourly_rate"
+              name="hourly_rate"
+              placeholder="e.g. 85"
+              inputmode="decimal"
+              autocomplete="off"
+              required
+            >
+          </div>
+        </div>
+
+        <button type="submit" class="btn" id="submit-btn">Get started</button>
+
+        <div class="msg error" id="error-msg"></div>
+        <div class="msg info" id="info-msg"></div>
+
+      </form>
+
+      <p class="footer">Already registered? Message us on WhatsApp.</p>
+    </div>
+
+    <div class="success" id="success-view">
+      <div class="success-emoji">🎉</div>
+      <div class="success-heading">You're all set!</div>
+      <p class="success-body">Check your WhatsApp for a confirmation message.</p>
+    </div>
+  </div>
+
+  <script>
+    var form = document.getElementById('register-form');
+    var btn = document.getElementById('submit-btn');
+    var errorMsg = document.getElementById('error-msg');
+    var infoMsg = document.getElementById('info-msg');
+    var formView = document.getElementById('form-view');
+    var successView = document.getElementById('success-view');
+
+    function showError(text) {
+      infoMsg.classList.remove('visible');
+      errorMsg.textContent = text;
+      errorMsg.classList.add('visible');
+    }
+
+    function showInfo(text) {
+      errorMsg.classList.remove('visible');
+      infoMsg.textContent = text;
+      infoMsg.classList.add('visible');
+    }
+
+    function clearMessages() {
+      errorMsg.classList.remove('visible');
+      infoMsg.classList.remove('visible');
+    }
+
+    function setLoading(loading) {
+      btn.disabled = loading;
+      btn.textContent = loading ? 'Sending…' : 'Get started';
+    }
+
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault();
+      clearMessages();
+      setLoading(true);
+
+      var payload = {
+        business_name: document.getElementById('business_name').value.trim(),
+        abn: document.getElementById('abn').value.trim(),
+        phone: document.getElementById('phone').value.trim(),
+        email: document.getElementById('email').value.trim(),
+        hourly_rate: document.getElementById('hourly_rate').value.trim(),
+      };
+
+      try {
+        var res = await fetch('https://api.billvox.com.au/register', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+        });
+
+        var json;
+        try {
+          json = await res.json();
+        } catch (_) {
+          throw new Error('Unexpected response from server.');
+        }
+
+        if (json.success) {
+          formView.style.display = 'none';
+          successView.classList.add('visible');
+          return;
+        }
+
+        if (json.error === 'already_registered') {
+          showInfo(json.message);
+        } else {
+          showError(json.message || 'Something went wrong. Please try again.');
+        }
+      } catch (err) {
+        if (err.message && err.message !== 'Unexpected response from server.') {
+          showError('Could not connect. Please check your connection and try again.');
+        } else {
+          showError(err.message || 'Something went wrong. Please try again.');
+        }
+      } finally {
+        setLoading(false);
+      }
+    });
+  </script>
+</body>
+</html>
