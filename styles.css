@@ -1,0 +1,3 @@
+* { font-family: 'Inter', sans-serif; }
+input::placeholder { color: #9ca3af; }
+details summary::-webkit-details-marker { display: none; }
