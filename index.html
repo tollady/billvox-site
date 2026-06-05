@@ -19,14 +19,14 @@
 <nav class="border-b border-gray-200 bg-white sticky top-0 z-50 px-6">
   <div class="max-w-5xl mx-auto h-[58px] flex items-center justify-between">
     <span class="font-extrabold text-[1.1rem] tracking-tight text-gray-900">Billvox</span>
-    <a href="#waitlist" class="bg-blue-600 text-white text-[0.8rem] font-semibold px-4 py-[0.42rem] rounded-md no-underline">Join waitlist</a>
+    <a href="/register" class="bg-blue-600 text-white text-[0.8rem] font-semibold px-4 py-[0.42rem] rounded-md no-underline">Get started</a>
   </div>
 </nav>
 
 <!-- Hero -->
 <section id="waitlist" class="px-6 pt-[5.5rem] pb-16 text-center bg-white">
   <div class="inline-flex items-center gap-1 bg-blue-50 border border-blue-200 text-blue-700 text-[0.72rem] font-semibold px-3.5 py-[0.28rem] rounded-full mb-7 tracking-wide">
-    🚧 Coming soon · Melbourne, AU
+    🇦🇺 Now available · Melbourne, AU
   </div>
   <h1 class="text-[clamp(2.2rem,5vw,3.4rem)] font-extrabold leading-[1.1] tracking-tight text-gray-900 max-w-[640px] mx-auto mb-5">
     Quotes &amp; invoices sent<br><span class="text-blue-600">straight from the job.</span>
@@ -36,28 +36,8 @@
   </p>
 
   <div class="max-w-[400px] mx-auto">
-    <div id="hero-form">
-      <input id="h-name" type="text" placeholder="Your name" class="w-full border border-gray-200 text-gray-900 rounded-lg px-4 py-[0.65rem] text-sm mb-2 outline-none bg-white">
-      <input id="h-email" type="email" placeholder="Email address" class="w-full border border-gray-200 text-gray-900 rounded-lg px-4 py-[0.65rem] text-sm mb-2 outline-none bg-white">
-      <input id="h-phone" type="tel" placeholder="Mobile number (optional)" class="w-full border border-gray-200 text-gray-900 rounded-lg px-4 py-[0.65rem] text-sm mb-3 outline-none bg-white">
-      <button onclick="submitForm('hero')" class="w-full bg-blue-600 text-white font-bold text-[0.95rem] py-[0.72rem] rounded-lg border-none cursor-pointer">
-        Register interest →
-      </button>
-    </div>
-    <div id="hero-success" class="hidden bg-blue-50 border border-blue-200 text-blue-700 p-4 rounded-lg font-semibold text-[0.9rem]">
-      ✓ You're on the list. We'll be in touch!
-    </div>
-    <p class="text-gray-400 text-xs mt-3">No spam. Early access only.</p>
-  </div>
-
-  <div class="flex items-center justify-center gap-2 mt-8">
-    <div class="flex">
-      <div class="w-[30px] h-[30px] rounded-full bg-blue-100 border-2 border-white flex items-center justify-center text-[0.62rem] font-bold text-blue-700 -ml-[6px]">BM</div>
-      <div class="w-[30px] h-[30px] rounded-full bg-indigo-100 border-2 border-white flex items-center justify-center text-[0.62rem] font-bold text-indigo-700 -ml-[6px]">SL</div>
-      <div class="w-[30px] h-[30px] rounded-full bg-green-100 border-2 border-white flex items-center justify-center text-[0.62rem] font-bold text-green-700 -ml-[6px]">TK</div>
-      <div class="w-[30px] h-[30px] rounded-full bg-yellow-100 border-2 border-white flex items-center justify-center text-[0.62rem] font-bold text-yellow-700 -ml-[6px]">JP</div>
-    </div>
-    <span class="text-gray-400 text-[0.8rem]">Join <strong class="text-gray-700">47 tradies</strong> already on the list</span>
+    <a href="/register" class="inline-block w-full bg-blue-600 text-white font-bold text-[0.95rem] py-[0.72rem] rounded-lg text-center no-underline mb-3">Get started free →</a>
+    <p class="text-gray-400 text-xs mt-3">Takes 30 seconds. No app needed.</p>
   </div>
 </section>
 
@@ -208,16 +188,8 @@
   <h2 class="text-white text-[clamp(1.8rem,4vw,2.6rem)] font-extrabold tracking-tight mb-3 leading-[1.15]">Stop doing admin at 9pm.</h2>
   <p class="text-blue-200 text-base mb-10">Get early access when we launch.</p>
   <div class="max-w-[380px] mx-auto">
-    <div id="bottom-form">
-      <input id="b-name" type="text" placeholder="Your name" class="w-full bg-white/10 border border-white/20 text-white rounded-lg px-4 py-[0.65rem] text-sm mb-2 outline-none">
-      <input id="b-email" type="email" placeholder="Email address" class="w-full bg-white/10 border border-white/20 text-white rounded-lg px-4 py-[0.65rem] text-sm mb-2 outline-none">
-      <input id="b-phone" type="tel" placeholder="Mobile (optional)" class="w-full bg-white/10 border border-white/20 text-white rounded-lg px-4 py-[0.65rem] text-sm mb-3 outline-none">
-      <button onclick="submitForm('bottom')" class="w-full bg-white text-blue-600 font-bold text-[0.95rem] py-[0.72rem] rounded-lg border-none cursor-pointer">Join the waitlist →</button>
-    </div>
-    <div id="bottom-success" class="hidden bg-white/[0.12] border border-white/25 text-white p-4 rounded-lg font-semibold text-[0.9rem]">
-      ✓ You're on the list. We'll be in touch!
-    </div>
-    <p class="text-white/40 text-xs mt-3">No spam. Unsubscribe any time.</p>
+    <a href="/register" class="inline-block w-full bg-white text-blue-600 font-bold text-[0.95rem] py-[0.72rem] rounded-lg text-center no-underline">Get started free →</a>
+    <p class="text-white/40 text-xs mt-3">Takes 30 seconds. No app needed.</p>
   </div>
 </section>
 
@@ -228,26 +200,5 @@
   </div>
 </footer>
 
-<script>
-async function submitForm(formId) {
-  const prefix = formId === 'hero' ? 'h' : 'b';
-  const name = document.getElementById(prefix + '-name').value;
-  const email = document.getElementById(prefix + '-email').value;
-  const phone = document.getElementById(prefix + '-phone').value;
-
-  if (!email) return;
-
-  const res = await fetch('https://billvox-worker.ben-25b.workers.dev', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ name, email, phone })
-  });
-
-  if (res.ok) {
-    document.getElementById(formId + '-form').style.display = 'none';
-    document.getElementById(formId + '-success').style.display = 'block';
-  }
-}
-</script>
 </body>
 </html>
