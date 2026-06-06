@@ -66,8 +66,8 @@
     <!-- White form panel -->
     <div class="bg-white border border-gray-200 rounded-2xl p-8">
 
-      <h2 class="text-[1.1rem] font-extrabold tracking-tight text-gray-900 mb-1">Create your account</h2>
-      <p class="text-[0.85rem] text-gray-500 leading-relaxed mb-6">We'll send a WhatsApp confirmation once you're set up.</p>
+      <h2 id="form-header" class="text-[1.1rem] font-extrabold tracking-tight text-gray-900 mb-1">Create your account</h2>
+      <p id="form-subheader" class="text-[0.85rem] text-gray-500 leading-relaxed mb-6">We'll send a WhatsApp confirmation once you're set up.</p>
 
       <div id="form-view">
         <form id="register-form" novalidate>
@@ -133,7 +133,7 @@
       <div id="success-view" class="hidden text-center py-6">
         <div class="text-[2.8rem] mb-4">🎉</div>
         <div class="text-xl font-bold text-gray-900 mb-2">You're all set!</div>
-        <p class="text-[0.95rem] text-gray-500 leading-relaxed">Check your WhatsApp for a confirmation message.</p>
+        <p class="text-[0.95rem] text-gray-500 leading-relaxed">Check your WhatsApp for a message from <strong class="text-gray-700">+1 906 667 6782</strong> — save it as "Billvox" in your contacts.</p>
       </div>
 
     </div><!-- end white panel -->
@@ -215,6 +215,8 @@
       if (json.success) {
         formView.style.display = 'none';
         successView.classList.remove('hidden');
+        document.getElementById('form-header').style.display = 'none';
+        document.getElementById('form-subheader').style.display = 'none';
         return;
       }
 
