@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>User guide — Billvox</title>
+<link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body class="bg-white">
+
+<!-- Nav -->
+<nav class="border-b border-gray-200 bg-white sticky top-0 z-50 px-6">
+  <div class="max-w-5xl mx-auto h-[58px] flex items-center justify-between">
+    <a href="/" class="font-extrabold text-[1.1rem] tracking-tight text-gray-900 no-underline">Billvox</a>
+    <a href="/" class="text-gray-500 text-[0.85rem] no-underline hover:text-gray-900">← Back</a>
+  </div>
+</nav>
+
+<!-- Content -->
+<main class="bg-gray-50 border-y border-gray-100 py-14 px-6 min-h-screen">
+  <div class="max-w-[760px] mx-auto">
+
+    <!-- Header -->
+    <p class="text-[0.7rem] font-semibold tracking-[0.1em] uppercase text-gray-400 mb-2">Reference</p>
+    <h1 class="text-[clamp(1.8rem,4vw,2.4rem)] font-extrabold tracking-tight text-gray-900 mb-3 leading-[1.15]">User guide</h1>
+    <p class="text-[0.95rem] text-gray-500 leading-relaxed mb-10">Everything you need to know about using Billvox over WhatsApp.</p>
+
+    <!-- Sending a job -->
+    <div class="bg-white border border-gray-200 rounded-2xl p-8 mb-6">
+      <h2 class="text-[1.1rem] font-extrabold text-gray-900 mb-1">Sending a job</h2>
+      <p class="text-[0.85rem] text-gray-500 leading-relaxed mb-5">Just describe the job in plain English — who it was for, what you did, how long it took, and any parts used. No special format needed.</p>
+
+      <div class="bg-gray-50 border border-gray-100 rounded-xl p-5 mb-4">
+        <p class="text-[0.7rem] font-semibold tracking-[0.08em] uppercase text-gray-400 mb-3">Example messages</p>
+        <div class="space-y-3">
+          <div class="flex justify-end">
+            <div class="bg-blue-600 text-white px-4 py-2.5 rounded-[14px_14px_3px_14px] text-[0.85rem] leading-relaxed max-w-[85%]">Invoice for Dave Smith, replaced hot water system, 3 hours labour, parts $340</div>
+          </div>
+          <div class="flex justify-end">
+            <div class="bg-blue-600 text-white px-4 py-2.5 rounded-[14px_14px_3px_14px] text-[0.85rem] leading-relaxed max-w-[85%]">Invoice Mrs Johnson — fixed leaking tap, 1.5hrs, $85 materials</div>
+          </div>
+          <div class="flex justify-end">
+            <div class="bg-blue-600 text-white px-4 py-2.5 rounded-[14px_14px_3px_14px] text-[0.85rem] leading-relaxed max-w-[85%]">Quote for Tom at 14 Brown St — install 3 power points and a ceiling fan, estimate 4 hours</div>
+          </div>
+        </div>
+      </div>
+
+      <p class="text-[0.82rem] text-gray-500 leading-relaxed">Include the customer name, what you did, time spent, and any parts or materials. The more detail you give, the more accurate the invoice.</p>
+    </div>
+
+    <!-- Quotes vs invoices -->
+    <div class="bg-white border border-gray-200 rounded-2xl p-8 mb-6">
+      <h2 class="text-[1.1rem] font-extrabold text-gray-900 mb-1">Quotes vs invoices</h2>
+      <p class="text-[0.85rem] text-gray-500 leading-relaxed mb-5">Billvox will generate a quote or invoice based on what you say. Use the word "quote" or "estimate" to get a quote — otherwise it defaults to an invoice.</p>
+
+      <div class="grid grid-cols-2 gap-px bg-gray-100 border border-gray-100 rounded-xl overflow-hidden">
+        <div class="bg-white p-5">
+          <div class="font-bold text-[0.85rem] text-gray-900 mb-2">📄 Invoice</div>
+          <div class="text-[0.8rem] text-gray-500 leading-[1.55] space-y-1">
+            <p>Used after work is completed</p>
+            <p>Due date set to 14 days</p>
+            <p>Numbered sequentially (INV-001)</p>
+          </div>
+        </div>
+        <div class="bg-white p-5">
+          <div class="font-bold text-[0.85rem] text-gray-900 mb-2">📋 Quote</div>
+          <div class="text-[0.8rem] text-gray-500 leading-[1.55] space-y-1">
+            <p>Used before work begins</p>
+            <p>Valid for 30 days</p>
+            <p>Numbered sequentially (Q-001)</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Confirming and cancelling -->
+    <div class="bg-white border border-gray-200 rounded-2xl p-8 mb-6">
+      <h2 class="text-[1.1rem] font-extrabold text-gray-900 mb-1">Confirming and cancelling</h2>
+      <p class="text-[0.85rem] text-gray-500 leading-relaxed mb-5">After you send a job, Billvox sends back a summary to review. You then confirm or cancel before anything is sent.</p>
+
+      <div class="space-y-3 mb-5">
+        <div class="flex items-start gap-3 p-4 bg-gray-50 border border-gray-100 rounded-xl">
+          <span class="font-mono font-bold text-[0.85rem] text-blue-600 bg-blue-50 px-2 py-0.5 rounded mt-0.5">YES</span>
+          <div class="text-[0.82rem] text-gray-600 leading-relaxed">Generates the PDF and emails it to your address. You can then forward it to your client.</div>
+        </div>
+        <div class="flex items-start gap-3 p-4 bg-gray-50 border border-gray-100 rounded-xl">
+          <span class="font-mono font-bold text-[0.85rem] text-blue-600 bg-blue-50 px-2 py-0.5 rounded mt-0.5">NO</span>
+          <div class="text-[0.82rem] text-gray-600 leading-relaxed">Cancels the pending job. Nothing is sent.</div>
+        </div>
+      </div>
+
+      <p class="text-[0.82rem] text-gray-500 leading-relaxed">Made a mistake in your message? Just type a correction before replying YES — for example: <span class="font-medium text-gray-700">"Change the hours to 4"</span> or <span class="font-medium text-gray-700">"Customer name is Sarah Jones"</span>. Billvox will update the job and show you the revised summary.</p>
+    </div>
+
+    <!-- Commands reference -->
+    <div class="bg-white border border-gray-200 rounded-2xl p-8 mb-6">
+      <h2 class="text-[1.1rem] font-extrabold text-gray-900 mb-1">Commands</h2>
+      <p class="text-[0.85rem] text-gray-500 leading-relaxed mb-5">These keywords work any time — just send them as a message. They work in any case (yes, YES, and Yes all work the same).</p>
+
+      <div class="space-y-2">
+        <div class="flex items-start gap-4 p-4 bg-gray-50 border border-gray-100 rounded-xl">
+          <span class="font-mono font-bold text-[0.85rem] text-blue-600 bg-blue-50 px-2 py-0.5 rounded shrink-0 mt-0.5">HELP</span>
+          <div class="text-[0.82rem] text-gray-600 leading-relaxed">Returns a quick-reference message with instructions and examples.</div>
+        </div>
+        <div class="flex items-start gap-4 p-4 bg-gray-50 border border-gray-100 rounded-xl">
+          <span class="font-mono font-bold text-[0.85rem] text-blue-600 bg-blue-50 px-2 py-0.5 rounded shrink-0 mt-0.5">SETTINGS</span>
+          <div class="text-[0.82rem] text-gray-600 leading-relaxed">Opens a menu to view and edit your profile details — business name, ABN, email, and hourly rate.</div>
+        </div>
+        <div class="flex items-start gap-4 p-4 bg-gray-50 border border-gray-100 rounded-xl">
+          <span class="font-mono font-bold text-[0.85rem] text-blue-600 bg-blue-50 px-2 py-0.5 rounded shrink-0 mt-0.5">YES</span>
+          <div class="text-[0.82rem] text-gray-600 leading-relaxed">Confirms a pending job and sends the invoice or quote.</div>
+        </div>
+        <div class="flex items-start gap-4 p-4 bg-gray-50 border border-gray-100 rounded-xl">
+          <span class="font-mono font-bold text-[0.85rem] text-blue-600 bg-blue-50 px-2 py-0.5 rounded shrink-0 mt-0.5">NO</span>
+          <div class="text-[0.82rem] text-gray-600 leading-relaxed">Cancels a pending job. Nothing is sent.</div>
+        </div>
+        <div class="flex items-start gap-4 p-4 bg-gray-50 border border-gray-100 rounded-xl">
+          <span class="font-mono font-bold text-[0.85rem] text-blue-600 bg-blue-50 px-2 py-0.5 rounded shrink-0 mt-0.5">CANCEL</span>
+          <div class="text-[0.82rem] text-gray-600 leading-relaxed">Cancels a pending job, or exits the SETTINGS menu.</div>
+        </div>
+        <div class="flex items-start gap-4 p-4 bg-gray-50 border border-gray-100 rounded-xl">
+          <span class="font-mono font-bold text-[0.85rem] text-blue-600 bg-blue-50 px-2 py-0.5 rounded shrink-0 mt-0.5">RESTART</span>
+          <div class="text-[0.82rem] text-gray-600 leading-relaxed">During sign-up only — starts the registration process over from the beginning.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Editing your details -->
+    <div class="bg-white border border-gray-200 rounded-2xl p-8 mb-6">
+      <h2 class="text-[1.1rem] font-extrabold text-gray-900 mb-1">Editing your details</h2>
+      <p class="text-[0.85rem] text-gray-500 leading-relaxed mb-5">Send <span class="font-mono font-bold text-blue-600">SETTINGS</span> at any time to view and update your profile.</p>
+
+      <div class="bg-gray-50 border border-gray-100 rounded-xl p-5 mb-4">
+        <p class="text-[0.7rem] font-semibold tracking-[0.08em] uppercase text-gray-400 mb-3">Example</p>
+        <div class="space-y-2">
+          <div class="flex justify-end">
+            <div class="bg-blue-600 text-white px-4 py-2.5 rounded-[14px_14px_3px_14px] text-[0.85rem] max-w-[85%]">SETTINGS</div>
+          </div>
+          <div class="flex justify-start">
+            <div class="bg-white border border-gray-200 px-4 py-2.5 rounded-[14px_14px_14px_3px] text-[0.85rem] leading-relaxed max-w-[85%] text-gray-900">
+              Your current details:<br>
+              🏢 Business: Smith Plumbing<br>
+              🔢 ABN: Not provided<br>
+              📧 Email: dave@smithplumbing.com.au<br>
+              💰 Rate: $120/hr<br><br>
+              What would you like to update?<br>
+              1. Business name<br>
+              2. ABN<br>
+              3. Email<br>
+              4. Hourly rate
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p class="text-[0.82rem] text-gray-500 leading-relaxed">Reply with a number to update that field. You'll be asked to confirm the new value before it's saved. Reply <span class="font-mono font-bold text-blue-600">CANCEL</span> at any time to exit without changes.</p>
+    </div>
+
+    <!-- FAQs -->
+    <div class="bg-white border border-gray-200 rounded-2xl p-8 mb-6">
+      <h2 class="text-[1.1rem] font-extrabold text-gray-900 mb-5">Frequently asked questions</h2>
+
+      <div class="border border-gray-100 rounded-xl overflow-hidden">
+        <details class="border-b border-gray-100">
+          <summary class="px-5 py-4 text-[0.88rem] font-semibold text-gray-900 cursor-pointer list-none flex justify-between items-center">What number do I save in my contacts?<span class="text-gray-400 text-base font-normal">+</span></summary>
+          <p class="px-5 pb-4 text-[0.83rem] text-gray-500 leading-[1.6] m-0">Save <strong class="text-gray-700">+1 906 667 6782</strong> as "Billvox" in your contacts. That's the number you message to send jobs.</p>
+        </details>
+        <details class="border-b border-gray-100">
+          <summary class="px-5 py-4 text-[0.88rem] font-semibold text-gray-900 cursor-pointer list-none flex justify-between items-center">Where does the invoice get sent?<span class="text-gray-400 text-base font-normal">+</span></summary>
+          <p class="px-5 pb-4 text-[0.83rem] text-gray-500 leading-[1.6] m-0">The PDF invoice is emailed to the address you registered with. You can then forward it to your client. To update your email address, send <strong class="text-gray-700">SETTINGS</strong>.</p>
+        </details>
+        <details class="border-b border-gray-100">
+          <summary class="px-5 py-4 text-[0.88rem] font-semibold text-gray-900 cursor-pointer list-none flex justify-between items-center">Is GST calculated automatically?<span class="text-gray-400 text-base font-normal">+</span></summary>
+          <p class="px-5 pb-4 text-[0.83rem] text-gray-500 leading-[1.6] m-0">Yes. Billvox applies 10% GST to all line items and breaks it out correctly on the PDF — subtotal, GST, and total all shown separately.</p>
+        </details>
+        <details class="border-b border-gray-100">
+          <summary class="px-5 py-4 text-[0.88rem] font-semibold text-gray-900 cursor-pointer list-none flex justify-between items-center">What if I make a mistake in my message?<span class="text-gray-400 text-base font-normal">+</span></summary>
+          <p class="px-5 pb-4 text-[0.83rem] text-gray-500 leading-[1.6] m-0">Just send a correction before replying YES. For example: "Change the hours to 4" or "Customer is Sarah Jones". Billvox will update the job and show you a revised summary to confirm.</p>
+        </details>
+        <details class="border-b border-gray-100">
+          <summary class="px-5 py-4 text-[0.88rem] font-semibold text-gray-900 cursor-pointer list-none flex justify-between items-center">Can I change my hourly rate?<span class="text-gray-400 text-base font-normal">+</span></summary>
+          <p class="px-5 pb-4 text-[0.83rem] text-gray-500 leading-[1.6] m-0">Yes — send <strong class="text-gray-700">SETTINGS</strong> and choose option 4 to update your hourly rate. Changes apply to all future jobs.</p>
+        </details>
+        <details>
+          <summary class="px-5 py-4 text-[0.88rem] font-semibold text-gray-900 cursor-pointer list-none flex justify-between items-center">Something's not working — who do I contact?<span class="text-gray-400 text-base font-normal">+</span></summary>
+          <p class="px-5 pb-4 text-[0.83rem] text-gray-500 leading-[1.6] m-0">Email us at <a href="mailto:hello@billvox.com.au" class="text-blue-600 hover:underline">hello@billvox.com.au</a> and we'll get back to you.</p>
+        </details>
+      </div>
+    </div>
+
+    <p class="text-center text-[0.82rem] text-gray-400 mt-2">
+      Not signed up yet? <a href="/register" class="text-blue-600 hover:underline">Get started →</a>
+    </p>
+
+  </div>
+</main>
+
+<!-- Footer -->
+<footer class="bg-blue-800 px-6 py-5">
+  <div class="max-w-5xl mx-auto flex items-center justify-between flex-wrap gap-2">
+    <span class="text-blue-200 font-bold text-[0.9rem]">Billvox</span>
+    <span class="text-blue-300 text-xs">© 2026 Billvox · billvox.com.au · Melbourne, AU</span>
+  </div>
+</footer>
+
+</body>
+</html>
