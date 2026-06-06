@@ -99,6 +99,14 @@
           </div>
 
           <div class="mb-5">
+            <label class="block text-sm font-medium text-gray-700 mb-1.5" for="phone_confirm">Confirm mobile number</label>
+            <input type="tel" id="phone_confirm" name="phone_confirm"
+              placeholder="Re-enter your mobile number"
+              autocomplete="off" required
+              class="w-full border border-gray-300 rounded-lg px-4 py-[0.65rem] text-[16px] text-gray-900 outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100 bg-white transition-all">
+          </div>
+
+          <div class="mb-5">
             <label class="block text-sm font-medium text-gray-700 mb-1.5" for="email">Email address</label>
             <input type="email" id="email" name="email"
               placeholder="Invoices will be sent from this address"
@@ -201,6 +209,12 @@
       email: document.getElementById('email').value.trim(),
       hourly_rate: document.getElementById('hourly_rate').value.trim(),
     };
+
+    if (payload.phone !== document.getElementById('phone_confirm').value.trim()) {
+      showError('Mobile numbers do not match — please check and try again.');
+      setLoading(false);
+      return;
+    }
 
     try {
       var res = await fetch('https://api.billvox.com.au/register', {
