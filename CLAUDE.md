@@ -32,6 +32,10 @@ Leads with WhatsApp sign-up: a `wa.me` link with "Hi Billvox" pre-filled as the 
 
 The form's "Are you registered for GST?" Yes/No question only appears once an ABN is typed, and is required then; it's posted as `gst_registered` (true/false), and without an ABN it's always sent as false (the app's `/register` also enforces this).
 
+## User Guide
+
+The quote conversion cut-off date (16 October 2026) appears twice in `user-guide.html`: in the quote-to-invoice section and in the FAQ. It must match the date the app's `documents` table was deployed, so if the app's deploy date changes, update both.
+
 ## Footer
 
 Shows ABN 32 613 603 259 on every page.
