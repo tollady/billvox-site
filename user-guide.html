@@ -93,8 +93,44 @@
             <p>Used before work begins</p>
             <p>Valid for 30 days</p>
             <p>Numbered sequentially (Q-001)</p>
+            <p>Turns into an invoice when the job's done</p>
           </div>
         </div>
+      </div>
+    </div>
+
+    <!-- Turning a quote into an invoice -->
+    <div class="bg-white border border-gray-200 rounded-2xl p-8 mb-6">
+      <h2 class="text-[1.1rem] font-extrabold text-gray-900 mb-1">Turning a quote into an invoice</h2>
+      <p class="text-[0.85rem] text-gray-500 leading-relaxed mb-5">When the job's done, just say "job's done for Dave Smith" — typed or as a voice note. Billvox finds your open quote for that customer and sends back the invoice summary to check. Reply YES, EDIT or NO as usual.</p>
+
+      <div class="bg-gray-50 border border-gray-100 rounded-xl p-5 mb-4">
+        <p class="text-[0.7rem] font-semibold tracking-[0.08em] uppercase text-gray-400 mb-3">Example</p>
+        <div class="space-y-2">
+          <div class="flex justify-end">
+            <div class="bg-blue-600 text-white px-4 py-2.5 rounded-[14px_14px_3px_14px] text-[0.85rem] max-w-[85%]">Job's done for Dave Smith</div>
+          </div>
+          <div class="flex justify-start">
+            <div class="bg-white border border-gray-200 px-4 py-2.5 rounded-[14px_14px_14px_3px] text-[0.85rem] leading-relaxed max-w-[85%] text-gray-900"><strong>Got it. Here's what I've captured:</strong><br><br>
+              Customer: Dave Smith<br>
+              Type: Invoice<br>
+              Ref: Quote Q-003<br><br>
+              • 3x Labour — $360.00<br>
+              • 1x Tempering valve — $180.00<br><br>
+              Subtotal: $540.00<br>
+              GST (10%): $54.00<br>
+              Total: $594.00<br><br>
+              Happy with this?</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="space-y-3 text-[0.82rem] text-gray-500 leading-relaxed">
+        <p>The invoice gets its own number (e.g. INV-008) and the PDF shows "Ref: Quote Q-003". If you sent the quote to your client, their email is already filled in.</p>
+        <p>Want to be precise? Send <span class="font-mono font-bold text-blue-600">INVOICE Q-003</span>. Or send <span class="font-mono font-bold text-blue-600">QUOTES</span> to see your 5 most recent open quotes and reply with a number to pick one.</p>
+        <p>If more than one quote matches — say, two customers called Dave — you'll get a numbered list: "Reply with a number to turn one into an invoice."</p>
+        <p>If you've already invoiced that quote, you'll be asked: "Q-003 was already invoiced as INV-008. Make another invoice from it?"</p>
+        <p>Quotes confirmed before 16 October 2026 weren't stored, so they can't be converted. For those, Billvox replies "I can't find a copy of Q-003, so I can't convert it. Send me the job details and I'll make the invoice." — just send the job details as normal.</p>
       </div>
     </div>
 
@@ -173,6 +209,14 @@
           </div>
         </div>
         <div class="flex items-start gap-4 p-4 bg-gray-50 border border-gray-100 rounded-xl">
+          <span class="font-mono font-bold text-[0.85rem] text-blue-600 bg-blue-50 px-2 py-0.5 rounded shrink-0 mt-0.5">QUOTES</span>
+          <div class="text-[0.82rem] text-gray-600 leading-relaxed">Lists your 5 most recent open quotes. Reply with a number to turn one into an invoice.</div>
+        </div>
+        <div class="flex items-start gap-4 p-4 bg-gray-50 border border-gray-100 rounded-xl">
+          <span class="font-mono font-bold text-[0.85rem] text-blue-600 bg-blue-50 px-2 py-0.5 rounded shrink-0 mt-0.5">INVOICE Q-003</span>
+          <div class="text-[0.82rem] text-gray-600 leading-relaxed">Turns that quote into an invoice. You can also just say "job's done for Dave Smith".</div>
+        </div>
+        <div class="flex items-start gap-4 p-4 bg-gray-50 border border-gray-100 rounded-xl">
           <span class="font-mono font-bold text-[0.85rem] text-blue-600 bg-blue-50 px-2 py-0.5 rounded shrink-0 mt-0.5">YES</span>
           <div class="text-[0.82rem] text-gray-600 leading-relaxed">Confirms a pending job and sends the invoice or quote.</div>
         </div>
@@ -245,6 +289,10 @@
         <details class="border-b border-gray-100">
           <summary class="px-5 py-4 text-[0.88rem] font-semibold text-gray-900 cursor-pointer list-none flex justify-between items-center">Is GST calculated automatically?<span class="text-gray-400 text-base font-normal">+</span></summary>
           <p class="px-5 pb-4 text-[0.83rem] text-gray-500 leading-[1.6] m-0">Yes. If you're registered for GST, Billvox adds 10% and breaks it out to ATO standards. If you're not, GST is left off and your document is titled Invoice rather than Tax invoice.</p>
+        </details>
+        <details class="border-b border-gray-100">
+          <summary class="px-5 py-4 text-[0.88rem] font-semibold text-gray-900 cursor-pointer list-none flex justify-between items-center">Can I turn a quote into an invoice?<span class="text-gray-400 text-base font-normal">+</span></summary>
+          <p class="px-5 pb-4 text-[0.83rem] text-gray-500 leading-[1.6] m-0">Yes — when the job's done, say "job's done for Dave Smith" (or send <strong class="text-gray-700">INVOICE Q-003</strong>) and Billvox turns the quote into an invoice for you to check before anything is sent. Quotes confirmed before 16 October 2026 can't be converted — send the job details instead.</p>
         </details>
         <details class="border-b border-gray-100">
           <summary class="px-5 py-4 text-[0.88rem] font-semibold text-gray-900 cursor-pointer list-none flex justify-between items-center">What if I make a mistake in my message?<span class="text-gray-400 text-base font-normal">+</span></summary>
