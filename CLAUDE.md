@@ -30,6 +30,8 @@ One branch per change, reviewed on its Cloudflare preview URL, then merged to `m
 
 Leads with WhatsApp sign-up: a `wa.me` link with "Hi Billvox" pre-filled as the message text, plus a QR code shown on desktop. The traditional form is tucked behind a "Prefer to fill in a form?" expandable section — WhatsApp is the primary path, the form is the fallback.
 
+The form's "Are you registered for GST?" Yes/No question only appears once an ABN is typed, and is required then; it's posted as `gst_registered` (true/false), and without an ABN it's always sent as false (the app's `/register` also enforces this).
+
 ## Footer
 
 Shows ABN 32 613 603 259 on every page.

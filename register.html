@@ -109,6 +109,19 @@
               class="w-full border border-gray-300 rounded-lg px-4 py-[0.65rem] text-[16px] text-gray-900 outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100 bg-white transition-all">
           </div>
 
+          <!-- Only shown once an ABN is entered; without one, gst_registered is sent as false -->
+          <fieldset id="gst-field" class="mb-5 hidden">
+            <legend class="block text-sm font-medium text-gray-700 mb-1.5">Are you registered for GST?</legend>
+            <div class="flex gap-3">
+              <label class="flex-1 flex items-center gap-2 border border-gray-300 rounded-lg px-4 py-[0.65rem] text-[0.95rem] text-gray-900 cursor-pointer has-[:checked]:border-blue-500 has-[:checked]:ring-2 has-[:checked]:ring-blue-100 transition-all">
+                <input type="radio" name="gst_registered" value="yes" class="accent-blue-600"> Yes
+              </label>
+              <label class="flex-1 flex items-center gap-2 border border-gray-300 rounded-lg px-4 py-[0.65rem] text-[0.95rem] text-gray-900 cursor-pointer has-[:checked]:border-blue-500 has-[:checked]:ring-2 has-[:checked]:ring-blue-100 transition-all">
+                <input type="radio" name="gst_registered" value="no" class="accent-blue-600"> No
+              </label>
+            </div>
+          </fieldset>
+
           <div class="mb-5">
             <label class="block text-sm font-medium text-gray-700 mb-1.5" for="phone">Mobile number</label>
             <input type="tel" id="phone" name="phone"
@@ -201,6 +214,12 @@
   var infoMsg = document.getElementById('info-msg');
   var formView = document.getElementById('form-view');
   var successView = document.getElementById('success-view');
+  var abnInput = document.getElementById('abn');
+  var gstField = document.getElementById('gst-field');
+
+  abnInput.addEventListener('input', function () {
+    gstField.classList.toggle('hidden', abnInput.value.trim() === '');
+  });
 
   function showError(text) {
     infoMsg.classList.add('hidden');
@@ -229,13 +248,24 @@
     clearMessages();
     setLoading(true);
 
+    var abn = abnInput.value.trim();
+    var gstChoice = form.querySelector('input[name="gst_registered"]:checked');
+
     var payload = {
       business_name: document.getElementById('business_name').value.trim(),
-      abn: document.getElementById('abn').value.trim(),
+      abn: abn,
       phone: document.getElementById('phone').value.trim(),
       email: document.getElementById('email').value.trim(),
       hourly_rate: document.getElementById('hourly_rate').value.trim(),
+      // GST registration requires an ABN, so with none it's always false
+      gst_registered: abn ? (gstChoice ? gstChoice.value === 'yes' : null) : false,
     };
+
+    if (payload.gst_registered === null) {
+      showError('Please tell us whether you\'re registered for GST.');
+      setLoading(false);
+      return;
+    }
 
     if (payload.phone !== document.getElementById('phone_confirm').value.trim()) {
       showError('Mobile numbers do not match — please check and try again.');
