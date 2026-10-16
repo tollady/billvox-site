@@ -64,7 +64,7 @@
     </div>
     <div class="p-4 bg-gray-50 border border-gray-100 rounded-xl">
       <div class="font-semibold text-[0.83rem] text-gray-900 mb-1">Rates and materials</div>
-      <div class="text-[0.8rem] text-gray-500 leading-relaxed">Your default hourly rate is set in your profile (update it via SETTINGS). You can override it for any job by mentioning a different rate in your message — e.g. "3 hours at $150/hr". Material costs can be included as a separate amount — e.g. "parts $85".</div>
+      <div class="text-[0.8rem] text-gray-500 leading-relaxed">Your default hourly rate is set in your profile (change it with RATES EDIT). You can override it for any job by mentioning a different rate in your message — e.g. "3 hours at $150/hr". Material costs can be included as a separate amount — e.g. "parts $85".</div>
     </div>
     <div class="p-4 bg-gray-50 border border-gray-100 rounded-xl">
       <div class="font-semibold text-[0.83rem] text-gray-900 mb-1">ABN</div>
@@ -129,7 +129,7 @@
         </div>
         <div class="flex items-start gap-4 p-4 bg-gray-50 border border-gray-100 rounded-xl">
           <span class="font-mono font-bold text-[0.85rem] text-blue-600 bg-blue-50 px-2 py-0.5 rounded shrink-0 mt-0.5">SETTINGS</span>
-          <div class="text-[0.82rem] text-gray-600 leading-relaxed">Opens a menu to view and edit your profile details — business name, ABN, email, and hourly rate.</div>
+          <div class="text-[0.82rem] text-gray-600 leading-relaxed">Opens a menu to view and edit your profile details — business name, ABN, email, BSB, account number and GST registration. It also shows your hourly rate, which you change with RATES EDIT.</div>
         </div>
         <div class="flex items-start gap-4 p-4 bg-gray-50 border border-gray-100 rounded-xl">
           <span class="font-mono font-bold text-[0.85rem] text-blue-600 bg-blue-50 px-2 py-0.5 rounded shrink-0 mt-0.5">YES</span>
@@ -163,22 +163,29 @@
           </div>
           <div class="flex justify-start">
             <div class="bg-white border border-gray-200 px-4 py-2.5 rounded-[14px_14px_14px_3px] text-[0.85rem] leading-relaxed max-w-[85%] text-gray-900">
-              Your current details:<br>
+              <strong>Your current details:</strong><br>
               🏢 Business: Smith Plumbing<br>
-              🔢 ABN: Not provided<br>
+              🔢 ABN: 12345678901<br>
               📧 Email: dave@smithplumbing.com.au<br>
-              💰 Rate: $120/hr<br><br>
-              What would you like to update?<br>
+              💰 Default rate: $120/hr<br>
+              🏦 BSB: 062-000<br>
+              🏦 Account: Not provided<br>
+              🧾 GST registered: Yes<br><br>
+              <strong>What would you like to update?</strong><br>
               1. Business name<br>
               2. ABN<br>
               3. Email<br>
-              4. Hourly rate
+              4. Your rate-card<br>
+              5. BSB<br>
+              6. Account number<br>
+              7. GST registration<br><br>
+              Reply with a number, or CANCEL to exit.
             </div>
           </div>
         </div>
       </div>
 
-      <p class="text-[0.82rem] text-gray-500 leading-relaxed">Reply with a number to update that field. You'll be asked to confirm the new value before it's saved. Reply <span class="font-mono font-bold text-blue-600">CANCEL</span> at any time to exit without changes.</p>
+      <p class="text-[0.82rem] text-gray-500 leading-relaxed">Reply with a number to update that field. For business name, ABN, email, BSB and account number, you'll be asked to confirm the new value before it's saved. GST registration is a Yes/No question and is saved as soon as you answer. Option 4 shows your rate card. To change your hourly rate, send <span class="font-mono font-bold text-blue-600">RATES EDIT</span>. Reply <span class="font-mono font-bold text-blue-600">CANCEL</span> at any time to exit without changes.</p>
     </div>
 
     <!-- FAQs -->
@@ -204,7 +211,7 @@
         </details>
         <details class="border-b border-gray-100">
           <summary class="px-5 py-4 text-[0.88rem] font-semibold text-gray-900 cursor-pointer list-none flex justify-between items-center">Can I change my hourly rate?<span class="text-gray-400 text-base font-normal">+</span></summary>
-          <p class="px-5 pb-4 text-[0.83rem] text-gray-500 leading-[1.6] m-0">Yes — send <strong class="text-gray-700">SETTINGS</strong> and choose option 4 to update your hourly rate. Changes apply to all future jobs.</p>
+          <p class="px-5 pb-4 text-[0.83rem] text-gray-500 leading-[1.6] m-0">Yes — send <strong class="text-gray-700">RATES EDIT</strong> to update your hourly rate. Changes apply to all future jobs.</p>
         </details>
         <details>
           <summary class="px-5 py-4 text-[0.88rem] font-semibold text-gray-900 cursor-pointer list-none flex justify-between items-center">Something's not working — who do I contact?<span class="text-gray-400 text-base font-normal">+</span></summary>
