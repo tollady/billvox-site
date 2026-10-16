@@ -132,6 +132,47 @@
           <div class="text-[0.82rem] text-gray-600 leading-relaxed">Opens a menu to view and edit your profile details — business name, ABN, email, BSB, account number and GST registration. It also shows your hourly rate, which you change with RATES EDIT.</div>
         </div>
         <div class="flex items-start gap-4 p-4 bg-gray-50 border border-gray-100 rounded-xl">
+          <span class="font-mono font-bold text-[0.85rem] text-blue-600 bg-blue-50 px-2 py-0.5 rounded shrink-0 mt-0.5">RATES</span>
+          <div class="text-[0.82rem] text-gray-600 leading-relaxed min-w-0">
+            <p class="mb-2">Your rate card — your hourly rate plus any standard prices you charge. When a job doesn't state a price, Billvox uses the matching rate card price (and your hourly rate for labour). A price you mention in your message always wins.</p>
+            <ul class="space-y-1 mb-3">
+              <li><span class="font-mono font-bold text-blue-600">RATES</span> — shows your rate card. Your hourly rate is starred; other items are numbered.</li>
+              <li><span class="font-mono font-bold text-blue-600">RATES ADD</span> — adds an item: you'll be asked for its name, price and unit.</li>
+              <li><span class="font-mono font-bold text-blue-600">RATES EDIT</span> — changes your hourly rate.</li>
+              <li><span class="font-mono font-bold text-blue-600">RATES REMOVE</span> — removes an item by number or name, e.g. RATES REMOVE 2 or RATES REMOVE Standard callout. You'll be asked to confirm. Your hourly rate can't be removed.</li>
+            </ul>
+            <div class="bg-white border border-gray-100 rounded-xl p-4">
+              <p class="text-[0.7rem] font-semibold tracking-[0.08em] uppercase text-gray-400 mb-3">Example</p>
+              <div class="space-y-2">
+              <div class="flex justify-end">
+                <div class="bg-blue-600 text-white px-4 py-2.5 rounded-[14px_14px_3px_14px] text-[0.85rem] max-w-[85%]">RATES ADD</div>
+              </div>
+              <div class="flex justify-start">
+                <div class="bg-white border border-gray-200 px-4 py-2.5 rounded-[14px_14px_14px_3px] text-[0.85rem] leading-relaxed max-w-[85%] text-gray-900">What's the item called? e.g. 'Standard callout' or 'Hot water service replacement'. Reply CANCEL to exit.</div>
+              </div>
+              <div class="flex justify-end">
+                <div class="bg-blue-600 text-white px-4 py-2.5 rounded-[14px_14px_3px_14px] text-[0.85rem] max-w-[85%]">Standard callout</div>
+              </div>
+              <div class="flex justify-start">
+                <div class="bg-white border border-gray-200 px-4 py-2.5 rounded-[14px_14px_14px_3px] text-[0.85rem] leading-relaxed max-w-[85%] text-gray-900">What's the price for 'Standard callout'? e.g. 85 or $85</div>
+              </div>
+              <div class="flex justify-end">
+                <div class="bg-blue-600 text-white px-4 py-2.5 rounded-[14px_14px_3px_14px] text-[0.85rem] max-w-[85%]">95</div>
+              </div>
+              <div class="flex justify-start">
+                <div class="bg-white border border-gray-200 px-4 py-2.5 rounded-[14px_14px_14px_3px] text-[0.85rem] leading-relaxed max-w-[85%] text-gray-900">What's the unit? e.g. 'per hour', 'each', 'per sqm'</div>
+              </div>
+              <div class="flex justify-end">
+                <div class="bg-blue-600 text-white px-4 py-2.5 rounded-[14px_14px_3px_14px] text-[0.85rem] max-w-[85%]">each</div>
+              </div>
+              <div class="flex justify-start">
+                <div class="bg-white border border-gray-200 px-4 py-2.5 rounded-[14px_14px_14px_3px] text-[0.85rem] leading-relaxed max-w-[85%] text-gray-900">Added: Standard callout — $95.00 each ✅<br><br>Reply RATES to see all your rates.</div>
+              </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="flex items-start gap-4 p-4 bg-gray-50 border border-gray-100 rounded-xl">
           <span class="font-mono font-bold text-[0.85rem] text-blue-600 bg-blue-50 px-2 py-0.5 rounded shrink-0 mt-0.5">YES</span>
           <div class="text-[0.82rem] text-gray-600 leading-relaxed">Confirms a pending job and sends the invoice or quote.</div>
         </div>
